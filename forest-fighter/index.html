@@ -5,14 +5,36 @@
     <link rel="icon" type="image/svg+xml" href="/forest-fighter/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forest Fighter - Multiplayer Shooter</title>
-    <script type="module" crossorigin src="/forest-fighter/assets/index-DSJ8FeUV.js"></script>
-    <link rel="stylesheet" crossorigin href="/forest-fighter/assets/index-D6EtWgEn.css">
+    <script type="module" crossorigin src="/forest-fighter/assets/index-Dl5_y7xE.js"></script>
+    <link rel="stylesheet" crossorigin href="/forest-fighter/assets/index-C50_pu2E.css">
   </head>
   <body>
     <canvas class="webgl inactive"></canvas>
 
+    <!-- Game Mode Selection Screen -->
+    <div class="game-mode-screen">
+      <div class="game-mode-content">
+        <h1 class="game-title">FOREST FIGHTER</h1>
+        <p class="game-subtitle">Choose Your Game Mode</p>
+
+        <div class="mode-selection">
+          <button class="mode-btn single-player-btn">
+            <div class="mode-icon">🎯</div>
+            <h3>Single Player</h3>
+            <p>Play against AI bots</p>
+          </button>
+
+          <button class="mode-btn multiplayer-btn">
+            <div class="mode-icon">🌐</div>
+            <h3>Multiplayer</h3>
+            <p>Play with friends online</p>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- Username Screen -->
-    <div class="username-screen">
+    <div class="username-screen hidden">
       <div class="username-content">
         <h1 class="game-title">FOREST FIGHTER</h1>
         <p class="game-subtitle">Multiplayer Tactical Shooter</p>
