@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/forest-fighter/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forest Fighter - Multiplayer Shooter</title>
+    <script type="module" crossorigin src="/forest-fighter/assets/index-D7Er3PnV.js"></script>
+    <link rel="stylesheet" crossorigin href="/forest-fighter/assets/index-CkSN9TC0.css">
+  </head>
+  <body>
+    <canvas class="webgl inactive"></canvas>
+
+    <!-- Title Screen -->
+    <div class="title-screen">
+      <div class="title-content">
+        <h1 class="game-title">FOREST FIGHTER</h1>
+        <p class="game-subtitle">Multiplayer Tactical Shooter</p>
+
+        <div class="character-selection">
+          <h2>Choose Your Operative</h2>
+          <div class="character-grid">
+            <div class="character-card" data-character="assault">
+              <div class="character-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                <span class="character-emoji">🐰</span>
+              </div>
+              <h3>Thump</h3>
+              <p class="character-role">Recon / Medic</p>
+              <p class="character-desc">Nimble and fast with healing abilities</p>
+              <div class="character-stats">
+                <span>❤️ 100</span>
+                <span>⚡ 78.0</span>
+              </div>
+            </div>
+
+            <div class="character-card" data-character="stealth">
+              <div class="character-icon" style="background: linear-gradient(135deg, #ff6b35, #ff4500);">
+                <span class="character-emoji">🦊</span>
+              </div>
+              <h3>Max</h3>
+              <p class="character-role">Scout / Saboteur</p>
+              <p class="character-desc">Sleek and agile with stealth tactics</p>
+              <div class="character-stats">
+                <span>❤️ 80</span>
+                <span>⚡ 109.2</span>
+              </div>
+            </div>
+
+            <div class="character-card" data-character="heavy">
+              <div class="character-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                <span class="character-emoji">🐸</span>
+              </div>
+              <h3>Gorf</h3>
+              <p class="character-role">Heavy / Engineer</p>
+              <p class="character-desc">Bulky armor with engineering tech</p>
+              <div class="character-stats">
+                <span>❤️ 150</span>
+                <span>⚡ 54.6</span>
+              </div>
+            </div>
+
+            <div class="character-card" data-character="sniper">
+              <div class="character-icon" style="background: linear-gradient(135deg, #8B4513, #654321);">
+                <span class="character-emoji">🦌</span>
+              </div>
+              <h3>BamBam</h3>
+              <p class="character-role">Sniper / Strategist</p>
+              <p class="character-desc">Regal and composed long-range specialist</p>
+              <div class="character-stats">
+                <span>❤️ 75</span>
+                <span>⚡ 70.2</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="start-game-btn" disabled>Select a Character</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="crosshair">
+      <div class="crosshair-dot"></div>
+      <div class="crosshair-line crosshair-top"></div>
+      <div class="crosshair-line crosshair-bottom"></div>
+      <div class="crosshair-line crosshair-left"></div>
+      <div class="crosshair-line crosshair-right"></div>
+    </div>
+    <!-- Controls Dropdown -->
+    <div class="controls-dropdown">
+      <button class="controls-toggle">CONTROLS ▼</button>
+      <div class="controls-content hidden">
+        <div class="controls-section">
+          <h3>Movement</h3>
+          <p><kbd>W</kbd> Move Forward</p>
+          <p><kbd>A</kbd> Move Left</p>
+          <p><kbd>S</kbd> Move Backward</p>
+          <p><kbd>D</kbd> Move Right</p>
+          <p><kbd>Space</kbd> Jump</p>
+        </div>
+        <div class="controls-section">
+          <h3>Combat</h3>
+          <p><kbd>Left Click</kbd> Shoot</p>
+          <p><kbd>R</kbd> Reload</p>
+          <p><kbd>G</kbd> Throw Grenade</p>
+        </div>
+        <div class="controls-section">
+          <h3>Other</h3>
+          <p><kbd>Mouse</kbd> Look Around</p>
+          <p><kbd>E</kbd> Pick Up Weapon</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hud hidden">
+      <div class="player-info">
+        <span class="player-class"></span>
+      </div>
+      <div class="round-info">
+        <div class="round-display">Round: <span class="round-number">1</span>/3</div>
+        <div class="kills-display">Kills: <span class="kills-number">0</span>/5</div>
+        <div class="rounds-won">Rounds Won: <span class="rounds-won-number">0</span></div>
+      </div>
+      <div class="health-bar">
+        <div class="health-fill"></div>
+        <span class="health-text">100</span>
+      </div>
+      <div class="weapon-info">
+        <div class="weapon-name">Rifle</div>
+        <div class="ammo">
+          <span class="ammo-current">30</span> / <span class="ammo-reserve">120</span>
+        </div>
+      </div>
+      <div class="grenades-info">
+        Grenades: <span class="grenades-count">0</span>
+      </div>
+    </div>
+
+    <!-- Round End Screen -->
+    <div class="round-end-screen hidden">
+      <div class="round-end-content">
+        <h1 class="round-result"></h1>
+        <p class="round-stats"></p>
+        <button class="next-round-btn">Next Round</button>
+      </div>
+    </div>
+
+    <!-- Game End Screen -->
+    <div class="game-end-screen hidden">
+      <div class="game-end-content">
+        <h1 class="game-result"></h1>
+        <p class="game-stats"></p>
+        <button class="play-again-btn">Play Again</button>
+      </div>
+    </div>
+  </body>
+</html>
