@@ -5,14 +5,49 @@
     <link rel="icon" type="image/svg+xml" href="/forest-fighter/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forest Fighter - Multiplayer Shooter</title>
-    <script type="module" crossorigin src="/forest-fighter/assets/index-C91JPQGw.js"></script>
-    <link rel="stylesheet" crossorigin href="/forest-fighter/assets/index-BJx1CzxM.css">
+    <script type="module" crossorigin src="/forest-fighter/assets/index-BJ0FT55N.js"></script>
+    <link rel="stylesheet" crossorigin href="/forest-fighter/assets/index-DjNR_L00.css">
   </head>
   <body>
     <canvas class="webgl inactive"></canvas>
 
+    <!-- Username Screen -->
+    <div class="username-screen">
+      <div class="username-content">
+        <h1 class="game-title">FOREST FIGHTER</h1>
+        <p class="game-subtitle">Multiplayer Tactical Shooter</p>
+
+        <div class="username-form">
+          <h2>Enter Your Name</h2>
+          <input type="text" id="username-input" class="username-input" placeholder="Player Name" maxlength="15" autocomplete="off">
+          <button class="join-btn">Join Game</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lobby Screen -->
+    <div class="lobby-screen hidden">
+      <div class="lobby-content">
+        <h1 class="game-title">FOREST FIGHTER</h1>
+        <p class="game-subtitle">Multiplayer Lobby</p>
+
+        <div class="lobby-info">
+          <h2>Waiting for Players...</h2>
+          <p class="lobby-status">Need at least 2 players to start</p>
+
+          <div class="players-list">
+            <h3>Players in Lobby:</h3>
+            <div class="players-container"></div>
+          </div>
+
+          <button class="start-match-btn" disabled>Start Match (0/2)</button>
+          <button class="leave-lobby-btn">Leave Lobby</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Title Screen -->
-    <div class="title-screen">
+    <div class="title-screen hidden">
       <div class="title-content">
         <h1 class="game-title">FOREST FIGHTER</h1>
         <p class="game-subtitle">Multiplayer Tactical Shooter</p>
